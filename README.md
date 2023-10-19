@@ -28,7 +28,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 ## Hygraph
 
-Add a `.env` file with your `HYGRAPH_ENDPOINT` parameter in it. Use the hi performance read endpoint from the Hygraph interface.
+Add a `.env` file with your `HYGRAPH_ENDPOINT` parameter in it. Use the high performance read endpoint from the Hygraph interface.
 
 ## 🧞 Commands
 
@@ -42,7 +42,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm run codegen`         | GraphQL codegen for typescript                   |
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Check out the [Hygraph documentation](https://hygraph.com/docs) or join the [Hygraph Slack community](https://slack.hygraph.com)
+- Check out the [Astro documentation](https://docs.astro.build) or jump into The Astro [Discord server](https://astro.build/chat).
