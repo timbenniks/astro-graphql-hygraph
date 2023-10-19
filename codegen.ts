@@ -3,7 +3,7 @@ import 'dotenv/config'
 
 const config: CodegenConfig = {
   schema: process.env.HYGRAPH_ENDPOINT,
-  documents: ["./src/queries/getArticles.ts"],
+  documents: ["./src/queries/*"],
   ignoreNoDocuments: true,
   generates: {
     "./gql/": {
