@@ -1,9 +1,9 @@
 ---
 interface Props {
-  description: string;
-  image: string;
-  title: string;
-  url: string;
+  description: string | undefined;
+  image: string | undefined;
+  title: string | undefined;
+  url: string | undefined;
 }
 
 const { description, image, title, url } = Astro.props;

@@ -6,16 +6,16 @@ import getArticles from "../queries/getArticles";
 const articles = await getArticles();
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="max-w-screen-2xl mx-auto">
+<Layout title="Astro + GraphQL + Hygraph = Magic">
+  <main class="max-w-screen-2xl mx-auto mt-8">
     <ul class="grid grid-cols-3 gap-8">
       {
-        articles.map((article) => (
+        articles?.map((article) => (
           <Card
-            description={article.description}
-            image={article.image}
-            title={article.title}
-            url={article.url}
+            description={article?.description}
+            image={article?.image}
+            title={article?.title}
+            url={article?.url}
           />
         ))
       }

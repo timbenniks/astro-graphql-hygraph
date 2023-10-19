@@ -1,23 +1,9 @@
-import { request, gql } from "graphql-request";
-
-type Article = {
-  collection_id: string;
-  description: string;
-  image: string;
-  published_timestamp: string;
-  title: string;
-  url: string;
-};
-
-type Articles = {
-  articledatacollection: {
-    articles: [Article];
-  };
-};
+import { request } from "graphql-request";
+import { graphql } from "../../gql"
 
 const endpoint = import.meta.env.HYGRAPH_ENDPOINT;
 
-const query = gql`
+const query = graphql(`
   query Articles($username: String!, $collection_id: Int!, $per_page: Int!) {
     articledatacollection(username: $username, collection_id: $collection_id, per_page: $per_page) {
       articles {
@@ -30,7 +16,7 @@ const query = gql`
       }
     }
   }
-`;
+`);
 
 const variables = {
   username: "timbenniks",
@@ -39,12 +25,12 @@ const variables = {
 };
 
 export default async function () {
-  const { articledatacollection } = await request<Articles>(
+  const { articledatacollection } = await request(
     endpoint,
     query,
     variables
   );
 
-  return articledatacollection.articles
+  return articledatacollection?.articles
 }
 
